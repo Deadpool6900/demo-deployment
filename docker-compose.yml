@@ -1,9 +1,11 @@
-version: "3.9"
+# yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json
+# version: "3.8"
 
 services:
-  frontend:
+  web:
     build: .
-    container_name: todo-frontend
     ports:
-      - "3000:4173"
-    restart: unless-stopped
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
